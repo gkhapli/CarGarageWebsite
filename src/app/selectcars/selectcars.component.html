@@ -1,7 +1,8 @@
 <h2>My Cars</h2>
-<ul>
-    <li *ngFor="let vehicle of vehicleArray" [class.selected]="vehicle === selectedVehicle"
-    (click)="onSelect(vehicle)" disabled>
+<ul class="vehicles">
+    <li *ngFor="let vehicle of vehicleArray" 
+    [class.selected]="vehicle === selectedVehicle"
+    (click)="onSelect(vehicle)" >
         <span>{{vehicle.id}}</span> 
         <span>{{vehicle.make}} </span>
     </li>
