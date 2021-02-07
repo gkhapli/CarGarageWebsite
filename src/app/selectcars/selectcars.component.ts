@@ -9,14 +9,19 @@ import { Vehicle } from '../models/vehicle';
 })
 export class SelectcarsComponent implements OnInit {
 
-  vehicles: Vehicle[]; 
-  constructor(private carService : CarService) {}
+  public vehicleArray: any = [];
+  public selectedVehicle: Vehicle;
+  constructor(private carService: CarService) { }
 
   ngOnInit(): void {
 
     this.carService.getCarInformation()
-    // clone the data object, using its known Config shape
-    .subscribe((data: Vehicle[]) => this.vehicles = { ...data });
+      .subscribe((result) => {
+        this.vehicleArray = result;
+      })
   }
 
+  onSelect(vehicle: Vehicle): void {
+    this.selectedVehicle = vehicle;
+  }
 }

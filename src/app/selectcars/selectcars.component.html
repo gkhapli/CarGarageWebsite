@@ -1,1 +1,24 @@
-<p>selectcars works!</p>
+<h2>My Cars</h2>
+<ul>
+    <li *ngFor="let vehicle of vehicleArray" [class.selected]="vehicle === selectedVehicle"
+    (click)="onSelect(vehicle)" disabled>
+        <span>{{vehicle.id}}</span> 
+        <span>{{vehicle.make}} </span>
+    </li>
+</ul>
+
+<div *ngIf="selectedVehicle">
+
+    <h2>Car Details</h2>
+    <div><span>id: </span>{{selectedVehicle.make}}</div>
+    <div>
+        <label>Warehouse:
+            <input [(ngModel)]="selectedVehicle.warehouse" value="{{selectedVehicle.warehouse}}" disabled/>
+        </label>
+    </div>
+    <div>
+        <label>Location:
+            <input [(ngModel)]="selectedVehicle.location" value="{{selectedVehicle.location}}" disabled/>
+        </label>
+    </div>
+  </div>

@@ -7,4 +7,5 @@ export interface Vehicle{
     licensed:boolean;
     dateAdded:string;
     location:string;
+    warehouse:string;
 }

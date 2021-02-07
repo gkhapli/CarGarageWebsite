@@ -14,7 +14,7 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
     getCarInformation() {
-      return this.http.get(appGlobalConstants.GETCARINFORMATIONAPI);
+      return this.http.get(appGlobalConstants.GETCARINFORMATIONAPI+"/cars");
     }
 
     
